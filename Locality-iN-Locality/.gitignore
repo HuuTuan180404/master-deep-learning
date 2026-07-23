@@ -1,0 +1,39 @@
+*.ppm
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# PyTorch model files
+*.pth
+*.pt
+*.ckpt
+
+# Dataset
+data/
+datasets/
+
+# Logs
+logs/
+runs/
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
