@@ -1,6 +1,7 @@
 import torch
 import inspect
-import torch.nn as nn
+# import torch.nn as nn
+from torch.utils.data import DataLoader
 
 """
 proj = nn.Conv2d(3, 48, kernel_size=7, padding=3, stride=4)
@@ -26,4 +27,4 @@ print(x)
 """
 
 # print(inspect.getsource(torch.nn.MultiheadAttention))
-print(inspect.getfile(torch.nn.MultiheadAttention))
+print(inspect.getfile(DataLoader))
