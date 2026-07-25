@@ -175,9 +175,7 @@ class LocalViT_TNT(TNT):
         new_patch_size = self.pixel_embed.new_patch_size
         num_pixel = new_patch_size**2
 
-        dpr = [
-            x.item() for x in torch.linspace(0, drop_path_rate, depth)
-        ]  # stochastic depth decay rule
+        dpr = [x.item() for x in torch.linspace(0, drop_path_rate, depth)]  # stochastic depth decay rule
         blocks = []
         for i in range(depth):
             blocks.append(
