@@ -70,17 +70,15 @@ class Attention(nn.Module):
             bias=qkv_bias,
             batch_first=True,
         )
-        self.proj_drop = nn.Dropout(proj_drop, inplace=True)
+        # self.proj_drop = nn.Dropout(proj_drop, inplace=True)
 
     def forward(self, x):
         # B, N, C = x.shape
-        x, weights = self.attn(
-            query=x,
-            key=x,
+        x, weights = self.attn(query=x, key=x,
             value=x,
-            need_weights=True,
+            need_weights=False,
         )
-        x = self.proj_drop(x)
+        # x = self.proj_drop(x)
         return x, weights
 
 
@@ -333,7 +331,7 @@ def tnt_t_patch16_224(pretrained=False, **kwargs):
         patch_size=16,
         embed_dim=192,
         in_dim=12,
-        depth=12,
+        depth=1,
         num_heads=3,
         in_num_head=3,
         qkv_bias=False,
